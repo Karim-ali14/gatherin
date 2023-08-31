@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layoutDirection="ltr"
+    android:orientation="horizontal">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/chat_iv"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_marginTop="@dimen/dp_8"
+        tools:src="@drawable/avatar_1_raster" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvPersonName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_8"
+            android:singleLine="true"
+            tools:text="person name" />
+
+    <LinearLayout
+        android:id="@+id/questionContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_32"
+        android:background="@drawable/chat_received_msg_green_bg"
+        android:orientation="vertical"
+        android:foreground="?selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="@dimen/dp_8">
+
+        <TextView
+            android:id="@+id/tvQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/dp_8"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="What is your favourite" />
+
+        <include layout="@layout/container_question_options"/>
+
+        <!--            <RelativeLayout-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content" >-->
+
+        <!--                <RadioButton-->
+        <!--                    android:id="@+id/rbFirst"-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_alignParentStart="true"-->
+        <!--                    tools:text="First Choice"-->
+        <!--                    style="@style/WhiteRadioButtonStyle"/>-->
+
+        <!--                <ProgressBar-->
+        <!--                    android:id="@+id/progress1"-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_alignTop="@+id/rbFirst"-->
+        <!--                    android:layout_alignBottom="@+id/rbFirst"-->
+        <!--                    android:layout_marginStart="@dimen/dp_8"-->
+        <!--                    android:layout_marginEnd="@dimen/dp_8"-->
+        <!--                    android:layout_toEndOf="@+id/rbFirst"-->
+        <!--                    android:visibility="invisible"-->
+        <!--                    style="?android:attr/progressBarStyleSmall" />-->
+
+        <!--                <RadioButton-->
+        <!--                    android:id="@+id/rbSecond"-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_alignParentStart="true"-->
+        <!--                    android:layout_below="@+id/rbFirst"-->
+        <!--                    tools:text="Second choice"-->
+        <!--                    style="@style/WhiteRadioButtonStyle"/>-->
+
+        <!--                <ProgressBar-->
+        <!--                    android:id="@+id/progress2"-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_alignTop="@+id/rbSecond"-->
+        <!--                    android:layout_alignBottom="@+id/rbSecond"-->
+        <!--                    android:layout_marginStart="@dimen/dp_8"-->
+        <!--                    android:layout_marginEnd="@dimen/dp_8"-->
+        <!--                    android:layout_toEndOf="@+id/rbSecond"-->
+        <!--                    android:visibility="invisible"-->
+        <!--                    style="?android:attr/progressBarStyleSmall" />-->
+
+        <!--                <RadioButton-->
+        <!--                    android:id="@+id/rbThird"-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_alignParentStart="true"-->
+        <!--                    android:layout_below="@+id/rbSecond"-->
+        <!--                    tools:text="Third Choice"-->
+        <!--                    android:visibility="gone"-->
+        <!--                    style="@style/WhiteRadioButtonStyle"/>-->
+
+        <!--                <ProgressBar-->
+        <!--                    android:id="@+id/progress3"-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_alignTop="@+id/rbThird"-->
+        <!--                    android:layout_alignBottom="@+id/rbThird"-->
+        <!--                    android:layout_marginStart="@dimen/dp_8"-->
+        <!--                    android:layout_marginEnd="@dimen/dp_8"-->
+        <!--                    android:layout_toEndOf="@+id/rbThird"-->
+        <!--                    android:visibility="invisible"-->
+        <!--                    style="?android:attr/progressBarStyleSmall" />-->
+
+        <!--                <RadioButton-->
+        <!--                    android:id="@+id/rbFourth"-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_alignParentStart="true"-->
+        <!--                    android:layout_below="@+id/rbThird"-->
+        <!--                    tools:text="Fourth choice here"-->
+        <!--                    android:visibility="gone"-->
+        <!--                    style="@style/WhiteRadioButtonStyle"/>-->
+
+        <!--                <ProgressBar-->
+        <!--                    android:id="@+id/progress4"-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_alignTop="@+id/rbFourth"-->
+        <!--                    android:layout_alignBottom="@+id/rbFourth"-->
+        <!--                    android:layout_marginStart="@dimen/dp_8"-->
+        <!--                    android:layout_marginEnd="@dimen/dp_8"-->
+        <!--                    android:layout_toEndOf="@+id/rbFourth"-->
+        <!--                    android:visibility="invisible"-->
+        <!--                    style="?android:attr/progressBarStyleSmall" />-->
+
+        <!--            </RelativeLayout>-->
+
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/tvNumAnswers"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="@dimen/dp_8"-->
+        <!--            android:layout_marginStart="@dimen/dp_16"-->
+        <!--            android:textColor="@color/light_grey"-->
+        <!--            android:visibility="gone"-->
+        <!--            tools:text="45 answers"/>-->
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+<!--    <View-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:layout_weight="1"/>-->
+
+</LinearLayout>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1008495198128",
+    "firebase_url": "https://gather-in-c1235-default-rtdb.firebaseio.com",
+    "project_id": "gather-in-c1235",
+    "storage_bucket": "gather-in-c1235.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1008495198128:android:28db63939e40a15ca1a075",
+        "android_client_info": {
+          "package_name": "com.orwa.gatherin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1008495198128-j5e1t0oddn0no2r8blttb0b7uq32e637.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNA-reeW61GFYtoqjAi23pRKD0AjRUv9M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1008495198128-j5e1t0oddn0no2r8blttb0b7uq32e637.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1008495198128-4dtvdg8pgvttcjoqqk773v88uj6vqfnj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.gather-in"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

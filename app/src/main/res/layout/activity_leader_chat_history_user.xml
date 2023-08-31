@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".User.LeaderChatHistoryUser.View.LeaderChatHistoryUserActivity">
+
+    <com.github.florent37.shapeofview.shapes.RoundRectView
+        android:id="@+id/rrFirst"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:shape_roundRect_bottomLeftRadius="20dp"
+        app:shape_roundRect_bottomRightRadius="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:padding="5dp"
+                android:src="@drawable/ab_back" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="@string/leaderChats"
+                android:textColor="@color/appColor"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvLeaderChatHistory"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rrFirst"
+        android:layout_marginBottom="20dp" />
+</RelativeLayout>

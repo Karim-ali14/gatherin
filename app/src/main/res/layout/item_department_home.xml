@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+
+    android:background="@drawable/drawable_white_5_radius">
+
+    <RelativeLayout
+        android:id="@+id/relativeStart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp">
+
+        <TextView
+            android:id="@+id/tvSection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:textColor="@color/appColor"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tool:text="Section A" />
+
+        <ImageView
+            android:id="@+id/ivEdit"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="4dp"
+            android:padding="4dp"
+            android:src="@drawable/edit" />
+
+        <ImageView
+            android:id="@+id/ivDelete"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/ivEdit"
+            android:padding="4dp"
+            android:src="@drawable/delete" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvGroupNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeStart"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="@dimen/dp_4"
+        android:textColor="@color/black"
+        tool:text="(2 groups)"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tvCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeStart"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_4"
+        android:textColor="@color/black"
+        tool:text="CODE1"
+        android:textSize="14sp" />
+
+</RelativeLayout>

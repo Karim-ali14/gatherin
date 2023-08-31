@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.github.florent37.shapeofview.shapes.RoundRectView android:id="@+id/rrFirst"
+    android:layout_width="match_parent"
+    android:layout_height="96dp"
+    app:shape_roundRect_bottomLeftRadius="@dimen/dp_24"
+    app:shape_roundRect_bottomRightRadius="@dimen/dp_24"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dp_8"
+            android:padding="@dimen/dp_4"
+            android:src="@drawable/ab_back" />
+
+        <TextView
+            android:id="@+id/header_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/appColor"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnResults"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:layout_centerVertical="true"
+            android:text="@string/btnResults"
+            android:visibility="invisible"
+            style="@style/RoundedButtonBlueStyle"/>
+
+
+    </RelativeLayout>
+
+</com.github.florent37.shapeofview.shapes.RoundRectView>

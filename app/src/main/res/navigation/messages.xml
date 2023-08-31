@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright 2019, The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_messages"
+    app:startDestination="@+id/messagesListFragment">
+
+    <fragment
+            android:id="@+id/messagesListFragment"
+            android:name="com.orwa.gatherin.present.teacher.messages.MessagesListFragment"
+            android:label="messages_list">
+        <action
+            android:id="@+id/action_messagesListFragment_to_groupContactFragment3"
+            app:destination="@id/groupContactFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/groupContactFragment3"
+        android:name="com.orwa.gatherin.present.common.contact.ContactFragment"
+        android:label="GroupContactFragment" >
+        <action
+            android:id="@+id/action_groupContactFragment3_to_chatImageActivity3"
+            app:destination="@id/chatImageActivity3" />
+    </fragment>
+    <activity
+        android:id="@+id/chatImageActivity3"
+        android:name="com.orwa.gatherin.present.common.contact.ChatImageActivity"
+        android:label="activity_chat_image"
+        tools:layout="@layout/activity_chat_image" />
+
+</navigation>

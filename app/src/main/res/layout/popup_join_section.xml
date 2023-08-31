@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="260dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_gravity="center_vertical">
+
+    <com.github.florent37.shapeofview.shapes.RoundRectView
+        android:id="@+id/iv_movie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:shape_roundRect_bottomLeftRadius="10dp"
+        app:shape_roundRect_bottomRightRadius="10dp"
+        app:shape_roundRect_topLeftRadius="10dp"
+        app:shape_roundRect_topRightRadius="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/ivClose"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_btn_close" />
+
+            <ImageView
+                android:id="@+id/ivJoin"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:src="@drawable/join_section" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="@string/joinToSection"
+                android:textColor="@color/appColor"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:id="@+id/relativePassword"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="@dimen/dp_16">
+
+                <ImageView
+                    android:id="@+id/ivPassword"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/passowrd_normal" />
+
+                <EditText
+                    android:id="@+id/etCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:hint="@string/enterCode1"
+                    android:textColor="@color/black"
+                    android:textAllCaps="true"
+                    android:inputType="textCapCharacters"
+                    android:textColorHint="@color/appColorLight"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toEndOf="@+id/ivPassword"
+                    android:background="@color/viewColor" />
+
+            </RelativeLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_16">
+
+
+                <Button
+                    android:id="@+id/joinConfirm"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@drawable/drawable_app_color_5_radious"
+                    android:text="@string/confirm"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:layout_gravity="center" />
+
+                <ProgressBar
+                    android:id="@+id/progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:visibility="invisible"/>
+
+            </FrameLayout>
+
+
+        </LinearLayout>
+
+    </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+
+</RelativeLayout>

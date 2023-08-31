@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context=".Teacher.NotificationTeacher.View.NotificationTeacherActivity">
+
+    <com.github.florent37.shapeofview.shapes.RoundRectView
+        android:id="@+id/rrFirst"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:shape_roundRect_bottomLeftRadius="20dp"
+        app:shape_roundRect_bottomRightRadius="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="@string/notification"
+                android:textColor="@color/appColor"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvNotification"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/linearTab"
+        android:layout_below="@id/rrFirst"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="20dp" />
+
+    <RelativeLayout
+        android:id="@+id/rlNoNotifications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/ivNoMessage"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/empty_notification" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivNoMessage"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text="@string/noNotificationsYet"
+            android:textColor="@color/lightBlack"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearTab"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/drawable_white_grey_stroke"
+        android:weightSum="4">
+
+        <RelativeLayout
+            android:id="@+id/relativeHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:src="@drawable/ic_home_not_active" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeMsg"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:src="@drawable/ic_chat_normal" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeNotification"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:src="@drawable/notification_active" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeProfile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:src="@drawable/ic_profile_normal" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

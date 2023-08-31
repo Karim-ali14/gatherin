@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/dp_16"
+    android:layout_marginTop="@dimen/dp_4"
+    android:layout_marginEnd="@dimen/dp_16"
+    android:layout_marginBottom="@dimen/dp_4"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?selectableItemBackground">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivProfile"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginBottom="@dimen/dp_16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/avatar_1_raster" />
+
+        <TextView
+            android:id="@+id/tvUserName"
+            style="@style/Main2TextBold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:maxLines="2"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@+id/ivProfile"
+            app:layout_constraintTop_toTopOf="@+id/ivProfile"
+            tools:text="Mohammad al mohammad mohammad" />
+
+        <TextView
+            android:id="@+id/tvUnreadMessages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="4 unread messages"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvUserName"
+            app:layout_constraintTop_toBottomOf="@+id/tvUserName" />
+
+        <!--        <TextView-->
+<!--            android:id="@+id/textView5"-->
+<!--            style="@style/Main3Text"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="@dimen/dp_8"-->
+<!--            android:text="@string/leader2"-->
+<!--            android:visibility="invisible"-->
+<!--            android:layout_marginStart="@dimen/dp_8"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/tvUserName"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/tvUserName"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/tvUserName" />-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

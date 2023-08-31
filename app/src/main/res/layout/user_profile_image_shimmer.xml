@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.facebook.shimmer.ShimmerFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/userInfoContainerShimmer"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    android:visibility="visible"
+    app:shimmer_auto_start="false">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivPlaceholderImage"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:padding="@dimen/dp_4"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/logo" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivPlaceholderImage"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_16"
+            android:textColor="@color/darkRed"
+            android:textSize="14sp"
+            android:text="@string/username" />
+
+
+    </RelativeLayout>
+</com.facebook.shimmer.ShimmerFrameLayout>

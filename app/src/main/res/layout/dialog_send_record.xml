@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="@dimen/dp_16">
+
+        <TextView
+            android:id="@+id/tvRecord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/recordAudioLabel" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_8"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginStart="@dimen/dp_8"
+        android:paddingTop="@dimen/dp_4">
+
+        <ImageButton
+            android:id="@+id/btnRecordAction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_mic_big"
+            android:background="?selectableItemBackground"/>
+
+    </FrameLayout>
+
+    <com.risingpark.risingvoiceindicator.RisingVoiceIndicator
+        android:id="@+id/voice_indicator"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:radius="5dp"
+        app:ball_colors="@array/ball_colors" />
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8">
+
+            <Button
+                android:id="@+id/btnSend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/light_grey"
+                android:layout_gravity="center"
+                android:drawableEnd="@drawable/ic_send"
+                android:visibility="invisible"
+                android:text="@string/sendBtn"/>
+
+            <ProgressBar
+                android:id="@+id/pbSend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="invisible"/>
+
+        </FrameLayout>
+
+
+
+    </LinearLayout>
+

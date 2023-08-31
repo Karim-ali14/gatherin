@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layoutDirection="ltr"
+    android:orientation="horizontal">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/chat_iv"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_marginTop="@dimen/dp_8"
+        tools:src="@drawable/avatar_1_raster" />
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="@dimen/dp_8"-->
+    <!--        android:layout_marginTop="@dimen/dp_8"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        android:padding="@dimen/dp_8"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/chat_iv"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/chat_iv">-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/nameTxt"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_margin="4dp"-->
+    <!--            android:textStyle="bold"-->
+    <!--            android:visibility="gone"-->
+    <!--            tools:text="Name" />-->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvSenderName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_8"
+            android:singleLine="true"
+            tools:text="person name" />
+
+        <TextView
+            android:id="@+id/receivedTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/chat_received_msg_bg"
+            android:foreground="?selectableItemBackground"
+            android:clickable="true"
+            android:maxWidth="240dp"
+            android:minWidth="80dp"
+            android:paddingStart="@dimen/dp_16"
+            android:paddingTop="@dimen/dp_16"
+            android:paddingEnd="@dimen/dp_8"
+            android:paddingBottom="@dimen/dp_16"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            tools:text="Hello this is a sample text Hello this is a sample text Hello this is a aaa sample text"
+            android:focusable="true" />
+
+    </LinearLayout>
+    <!--        <View-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="1dp"-->
+    <!--            android:layout_weight="1"/>-->
+
+    <!--    </LinearLayout>-->
+
+</LinearLayout>

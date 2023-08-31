@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context=".User.ChatUser.View.ChatUserActivity"
+    android:layoutDirection="ltr">
+
+<!--    <include layout="@layout/header_2titles_with_cancel" />-->
+    <com.github.florent37.shapeofview.shapes.RoundRectView android:id="@+id/rrFirst"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        app:shape_roundRect_bottomLeftRadius="@dimen/dp_24"
+        app:shape_roundRect_bottomRightRadius="@dimen/dp_24">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dp_16"
+                android:padding="@dimen/dp_4"
+                android:src="@drawable/ab_close"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/header_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/appColor"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/header_title_details"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="Contact" />
+
+            <TextView
+                android:id="@+id/header_title_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/header_title"
+                android:visibility="gone"
+                tools:text="group a (40 memebers)" />
+
+            <ImageView
+                android:id="@+id/ivReport"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:padding="@dimen/dp_4"
+                android:src="@drawable/ic_report"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+
+    <!--    <androidx.core.widget.NestedScrollView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:layout_above="@id/linearSend"-->
+    <!--        android:layout_below="@+id/rrFirst"-->
+    <!--        android:fillViewport="true">-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/linearSend"
+        android:layout_below="@+id/rrFirst"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rlSendAnswer"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:background="@drawable/drawable_white_and_shadow"
+            android:foreground="?selectableItemBackground"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/ivJoin"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/img_message_sent" />
+
+            <TextView
+                android:id="@+id/tvSendAnswerToMaster"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dp_8"
+                android:layout_toEndOf="@id/ivJoin"
+                android:text="@string/sendAnswerToMasterEnabled"
+                android:textColor="@color/lightBlack"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/llMembers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvMembers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:visibility="visible" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_marginBottom="10dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvChat"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ProgressBar
+                android:id="@+id/rvProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="invisible" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <!--    </androidx.core.widget.NestedScrollView>-->
+
+    <RelativeLayout
+        android:id="@+id/rlNoMessages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="invisible">
+
+        <ImageView
+            android:id="@+id/ivNoMessage"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/empty_messages" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivNoMessage"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="@string/noMessagesYet"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/linearSend"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <EditText
+            android:id="@+id/etChat"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_weight="1"
+            android:background="@drawable/drawable_edit_text_background"
+            android:hint="@string/writeMsg"
+            android:minLines="3"
+            android:paddingStart="10dp"
+            android:paddingEnd="@dimen/dp_8"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+            android:textSize="14sp" />
+
+        <ImageButton
+            android:id="@+id/btnRecord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/dp_8"
+            android:background="?selectableItemBackground"
+            android:src="@drawable/ic_mic"
+            android:visibility="visible" />
+
+        <FrameLayout
+            android:id="@+id/relativeSend"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/btnSendMsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:cropToPadding="true"
+                android:adjustViewBounds="true"
+                android:background="?selectableItemBackground"
+                android:src="@drawable/ic_send_message"
+                android:visibility="invisible" />
+
+            <ImageButton
+                android:id="@+id/btnPickImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="?selectableItemBackground"
+                android:src="@drawable/ic_add_img"
+                android:visibility="visible" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerSend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/dp_8"
+                android:layout_weight="1"
+                android:background="@drawable/drawable_edit_text_background"
+                android:hint="@string/writeMsg"
+                android:minLines="3"
+                android:paddingStart="10dp"
+                android:paddingEnd="@dimen/dp_8"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey"
+                android:textSize="14sp" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/dp_8"
+                android:background="?selectableItemBackground"
+                android:src="@drawable/ic_mic"
+                android:visibility="visible" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="?selectableItemBackground"
+                    android:src="@drawable/ic_send_message"
+                    android:visibility="visible" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="?selectableItemBackground"
+                    android:src="@drawable/ic_add_img"
+                    android:visibility="invisible" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+</RelativeLayout>

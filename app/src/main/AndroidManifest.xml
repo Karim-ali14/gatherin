@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.orwa.gatherin">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <application
+        android:name=".MyApplication"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:windowSoftInputMode="adjustResize">
+        <activity android:name=".present.common.contact.VideoChatActivity">
+            <tools:validation testUrl="https://www.gathering.host/JMRRZP" />
+            <tools:validation testUrl="http://api.gatherin.com/CODE1" />
+
+        </activity>
+        <activity android:name=".present.common.contact.ChatImageActivity" />
+        <activity android:name=".present.student.group.SendResponseToMasterActivity" />
+        <activity
+            android:name=".present.teacher.TeacherHomeActivity"
+            android:label="@string/title_activity_bottom"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".present.student.StudentActivity"
+            android:label="@string/title_activity_bottom"
+            android:windowSoftInputMode="adjustResize">
+            <tools:validation testUrl="https://api.gatherin.com/code1" />
+        </activity>
+        <activity android:name=".Authentication.VerificationCodeActivity.VerificationCodeActivity" />
+        <activity android:name=".Authentication.RegisterTeacher.View.MainActivity" />
+        <activity android:name=".User.LeaderChatHistoryUser.View.LeaderChatHistoryUserActivity" />
+        <activity android:name=".User.SectionGroups.View.SectionGroupsUserActivity" />
+        <activity android:name=".Teacher.ChangePasswordTeacher.View.ChangePasswordActivity" />
+        <activity android:name=".Teacher.EditProfileTeacher.View.EditProfileTeacherActivity" />
+        <activity android:name=".Teacher.NotificationTeacher.View.NotificationTeacherActivity" />
+        <activity android:name=".Teacher.ChatDetailsLeaders.View.ChatDetailsLeadersActivity" />
+        <activity android:name=".Teacher.ChatHistoryLeaders.View.ChatHistoryLeadersActivity" />
+        <activity android:name=".Teacher.GroupTeacherDetails.View.GroupDetailsTeacherActivity" />
+        <activity android:name=".Teacher.SendQuestionsToGroups.View.SendQuestionsToGroupsActivity" />
+        <activity android:name=".Teacher.TeacherProfile.View.TeacherProfileActivity" />
+        <activity android:name=".Teacher.ChooseGroupCaptain.View.ChooseGroupCaptainActivity" />
+        <activity android:name=".Teacher.CreateNewGroup.View.CreateNewGroupActivity" />
+        <activity android:name=".Teacher.SendNotificationAndReportsSecondStep.View.SendNotificationAndReportsSecondStepActivity" />
+        <activity android:name=".Teacher.SendNotificationAndReportsFirstStep.View.SendNotificationAndReportsFirstStepActivity" />
+        <activity android:name=".Teacher.GroupResultDetails.View.GroupResultDetailsActivity" />
+        <activity android:name=".Teacher.GroupsResults.View.GroupsResultsActivity" />
+        <activity android:name=".User.NotificationsUser.View.NotificationUserActivity" />
+        <activity android:name=".User.AboutApp.View.AboutAppActivity" />
+        <activity android:name=".User.EditUserProfile.View.EditProfileUserActivity" />
+        <activity android:name=".User.SettingsUser.View.SettingsUserActivity" />
+        <activity android:name=".User.SendMessageToLeader.View.SendMessageToLeaderActivity" />
+        <activity android:name=".User.ChatUser.View.ChatUserActivity" />
+        <activity android:name=".User.SectionDetailsUser.View.SectionDetailsUserActivity" />
+        <activity android:name=".Teacher.Home.View.HomeTeacherActivity" />
+        <activity android:name=".Teacher.EditSeection.View.EditSectionActivity" />
+        <activity android:name=".Teacher.CreateNewSection.View.CreateNewSectionActivity" />
+        <activity android:name=".Teacher.SectionDetails.View.SectionDetailsActivity" />
+        <activity android:name=".Teacher.SubscriptionsList.View.SubscriptionsListActivity" />
+        <activity android:name=".User.HomeUser.View.HomeUserActivity" />
+        <activity android:name=".Authentication.RegisterStudent.View.RegisterStudentActivity" />
+        <activity android:name=".Authentication.RegisterTeacher.View.RegisterTeacherActivity" />
+        <activity android:name=".Authentication.LoginTeacher.View.LoginTeacherActivity" />
+        <activity android:name=".SplashAndTypeOfLogin.TypeOfLogin.View.TypeOfLoginActivity" />
+        <activity android:name=".Authentication.LoginUser.View.LoginUserActivity" /> <!-- <activity android:name=".SplashAndTypeOfLogin.SplashActivity.View.SplashActivity"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.MAIN" /> -->
+        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <service android:name=".fcm.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <!--
+ Set custom default icon. This is used when no icon is set for incoming notification messages.
+     See README(https://goo.gl/l4GJaQ) for more.
+        -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_notification" />
+        <!--
+ Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more.
+        -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+
+        <service android:name=".fcm.SendFirebaseTokenService" />
+
+        <activity
+            android:name=".present.start.StartActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="https"
+                    android:host="www.gathering.host" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

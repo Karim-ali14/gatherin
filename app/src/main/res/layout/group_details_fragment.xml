@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context=".Teacher.GroupTeacherDetails.View.GroupDetailsTeacherActivity">
+    
+    <include layout="@layout/header_2titles_with_back"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rrFirst"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <FrameLayout
+                android:id="@+id/student_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:id="@+id/studentChat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp_24"
+                    android:background="@drawable/drawable_white_and_shadow"
+                    android:foreground="?selectableItemBackground">
+
+                    <ImageView
+                        android:id="@+id/ivTeacher1"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/btn_chat" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/ivTeacher1"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/dp_16"
+                        android:text="@string/contact"
+                        android:textColor="@color/lightBlack" />
+
+                </RelativeLayout>
+
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/appColor"
+                    android:textSize="16sp"
+                    android:layout_marginStart="@dimen/dp_16"
+                    tools:text="Master name" />
+
+                <LinearLayout
+                    android:id="@+id/vMasterName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:background="@color/white"
+                    android:padding="@dimen/dp_8"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ivMaster"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginStart="@dimen/dp_8"
+                        tools:src="@drawable/avatar_1_raster" />
+
+                    <TextView
+                        android:id="@+id/tvMasterName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="Master name value"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/dp_16"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/teacher_content"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginEnd="40dp"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:id="@+id/rlChooseLeader"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".49"
+                    android:background="@drawable/drawable_white_and_shadow"
+                    android:gravity="center"
+                    android:foreground="?selectableItemBackground">
+
+                    <ImageView
+                        android:id="@+id/ivTeacher"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/boy" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/ivTeacher"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/chooseLeader"
+                        android:textColor="@color/lightBlack" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".02" />
+
+                <RelativeLayout
+                    android:id="@+id/teacherChat"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".49"
+                    android:background="@drawable/drawable_white_and_shadow"
+                    android:gravity="center"
+                    android:foreground="?selectableItemBackground">
+
+                    <ImageView
+                        android:id="@+id/ivTeacher11"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/btn_chat" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/ivTeacher11"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/contact"
+                        android:textColor="@color/lightBlack" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="@string/membersList"
+                android:textColor="@color/appColor"
+                android:textSize="16sp" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.cooltechworks.views.shimmer.ShimmerRecyclerView
+                    android:id="@+id/rvMembers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:layout_marginBottom="@dimen/dp_16" />
+
+                <TextView
+                    android:id="@+id/rvEmptyView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_32"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/group_members_rv_empty"
+                    android:visibility="invisible"/>
+
+            </FrameLayout>
+
+
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:id="@+id/rlCode"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/drawable_grey"
+        android:visibility="invisible">
+
+        <ImageView
+            android:id="@+id/ivCopy"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dp_16"
+            android:src="@drawable/share_link" />
+
+        <TextView
+            android:id="@+id/tvLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_toEndOf="@+id/ivCopy"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="https://www.flaticon.com/free-icon/close_1828665?term=x"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

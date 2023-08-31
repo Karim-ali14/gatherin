@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context=".User.AboutApp.View.AboutAppActivity">
+
+    <com.github.florent37.shapeofview.shapes.RoundRectView
+        android:id="@+id/rrFirst"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:shape_roundRect_bottomLeftRadius="20dp"
+        app:shape_roundRect_bottomRightRadius="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:padding="5dp"
+                android:src="@drawable/ab_back" />
+
+            <TextView
+                android:layout_width="wrap_cogit remote add originntent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="@string/editProfile"
+                android:textColor="@color/appColor"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="144dp"
+        android:layout_height="57dp"
+        android:layout_below="@id/rrFirst"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/logo_with_name" />
+
+
+    <TextView
+        android:id="@+id/tvAboutApp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/ivFooter"
+        android:layout_below="@id/ivLogo"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
+        android:lineSpacingExtra="5dp"
+        android:scrollbars="vertical"
+        android:text="في الأعمال المضطربة من قطع في والحضور إلى الحوت، وهناك الكثير من تشغيل إلى الوراء وإلى الأمام بين الطاقم. الآن المطلوبين اليدين هنا، ثم مرة أخرى الأيدي المطلوبين هناك. لا يوجد البقاء في أي مكان واحد. لفي نفس الوقت كل شيء يجب القيام به في كل مكان. هو الشيء نفسه معه الذي يسعى وصف المشهد. وعلينا الآن أن نتبع طريقنا قليلا. وقد ذكر أنه عند كسر أول مرة في ظهر الحوت، تم إدراج خطاف هوك في الثقب الأصلي هناك قطع من البستوني من الاصحاب. ولكن كيف كان ذلك الخرقاء ويزن كتلة كما أن ربط نفسه الحصول على ثابت في تلك الحفرة؟ تم إدراجه هناك من قبل صديقي الخاص كويكيغ، الذي كان واجب، كما هاربونير، أن ينزل على ظهر الوحش لغرض خاص المشار إليها. ولكن في حالات كثيرة جدا، تتطلب الظروف أن يبقى هاربونير على الحوت حتى يتم الانتهاء من كامل الشد أو تجريد العملية. الحوت، سواء كان ذلك لوحظ، يكمن تماما تقريبا المغمورة، باستثناء الأجزاء الفورية التي تعمل على. حتى أسفل هناك، حوالي عشرة أقدام تحت مستوى سطح السفينة، و فلوندرز هاربونير الفقراء حول، ونصف على الحوت ونصف في الماء، كما كتلة واسعة تدور مثل فقي مطحنة تحته. في هذه المناسبة، كان كويكيغ في زي المرتفعات، وهو قميص وجوارب، حيث يبدو أن عيني، على الأقل، ميزة غير شائعة؛ ولم يكن لأحد فرصة أفضل لمراقبة ذلك، كما سيظهر في الوقت الراهن."
+        android:textColor="@color/grey"
+        android:textSize="14sp" />
+
+    <ImageView
+        android:id="@+id/ivFooter"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/login_bg" />
+
+
+</RelativeLayout>

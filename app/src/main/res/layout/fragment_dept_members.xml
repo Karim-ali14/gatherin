@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Teacher.CreateNewGroup.View.CreateNewGroupActivity">
+
+    <include layout="@layout/header_with_cancel" />
+
+    <TextView
+        android:id="@+id/tvCreateEditGroupTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivBack"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="30dp"
+        android:text="@string/membersList"
+        android:textColor="@color/appColor"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etSearchMember"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvCreateEditGroupTitle"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:hint="@string/search_hint"
+        android:imeOptions="actionSearch"
+        android:inputType="textNoSuggestions"
+        android:selectAllOnFocus="true"
+        tools:text="Android" />
+
+    <!--    <androidx.core.widget.NestedScrollView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:layout_below="@+id/tvCreateEditGroupTitle">-->
+
+
+    <RelativeLayout
+        android:id="@+id/rlUpdateGroup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/etSearchMember"
+        android:layout_marginTop="@dimen/dp_8"
+        android:visibility="visible">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMembers"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp_16"
+            android:scrollbars="vertical"
+            app:layoutManager="LinearLayoutManager"
+            app:shimmer_demo_child_count="3" />
+
+        <TextView
+            android:id="@+id/emptyList"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/no_results"
+            android:textSize="22sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center" />
+
+        <Button
+            android:id="@+id/retry_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/retry" />
+
+        <TextView
+            android:id="@+id/membersRVEmpty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/members_rv_empty"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+
+    <!--    </androidx.core.widget.NestedScrollView>-->
+
+
+</RelativeLayout>

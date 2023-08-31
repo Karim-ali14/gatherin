@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/auth_header" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_16">
+
+                <TextView
+                    android:id="@+id/tvCreateEditGroupTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/enterCode"
+                    android:textColor="@color/appColor"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:text="@string/send_code_time_label"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                <TextView
+                    android:id="@+id/verify_code_timer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textStyle="bold"
+                    tools:text="1:20" />
+
+
+                <ImageView
+                    android:id="@+id/check_code_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:src="@drawable/ic_error_copy_2"
+                    android:visibility="invisible" />
+
+
+                <RelativeLayout
+                    android:id="@+id/relativeEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <EditText
+                        android:id="@+id/etCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:gravity="center"
+                        android:hint="@string/enterCode1"
+                        android:inputType="text"
+                        android:maxLength="6"
+                        android:textColor="@color/appColor"
+                        android:textColorHint="@color/appColorLight"
+                        android:textSize="16sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/viewColor" />
+                </RelativeLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/send_code_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_8"
+                        android:text="@string/continue_btn" />
+
+                    <Button
+                        android:id="@+id/resend_code_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_8"
+                        android:text="@string/resend_code_btn"
+                        android:visibility="invisible"/>
+
+                </FrameLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

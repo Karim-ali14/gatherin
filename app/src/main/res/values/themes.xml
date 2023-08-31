@@ -1,0 +1,221 @@
+<resources xmlns:ns2="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/appColor</item>
+        <item name="colorPrimaryVariant">@color/appColor</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <!--        <item name="colorAccent">@color/white</item>-->
+        <item name="android:typeface">serif</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <!--        <item name="android:lineSpacingExtra">0dp</item>-->
+        <!--        <item name="android:includeFontPadding">false</item>-->
+        <item name="navigationIcon">@drawable/ic_launcher_background</item>
+        <item name="android:windowBackground">@color/appColor</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+
+
+<!--        <item name= "android:textViewStyle" > @style/MyTextViewStyle </item>-->
+<!--        <item name= "android:buttonStyle" > @style/MyButtonStyle </item>-->
+
+        <!--this attribute is to change the theme of the normal FAB-->
+        <!--        <item name="floatingActionButtonStyle">@style/Widget.MaterialComponents.FloatingActionButton</item>-->
+
+    </style>
+
+    <!--    <style name="EditText.OutlinedBox" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">-->
+    <!--        &lt;!&ndash;        <item name="android:minHeight">50dp</item>&ndash;&gt;-->
+    <!--        <item name="android:textSize">14sp</item>-->
+    <!--        <item name="android:textColorHint">@color/white</item>-->
+    <!--        <item name="hintTextColor">@color/appColor</item>-->
+    <!--        <item name="hintEnabled">true</item>-->
+    <!--        <item name="boxStrokeColor">@color/appColor</item>-->
+    <!--        &lt;!&ndash;        <item name="android:padding">10dp</item>&ndash;&gt;-->
+    <!--    </style>-->
+
+    <style name="Theme.Transparent" parent="android:Theme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+
+    <!--    <style name="TextLabel" parent="TextAppearance.AppCompat">-->
+    <!--        &lt;!&ndash; Hint color and label color in FALSE state &ndash;&gt;-->
+    <!--        <item name="android:textColorHint">@color/grey</item>-->
+    <!--        <item name="android:textSize">20sp</item>-->
+    <!--        &lt;!&ndash; Label color in TRUE state and bar color FALSE and TRUE State &ndash;&gt;-->
+    <!--        <item name="colorAccent">@color/appColor</item>-->
+    <!--        <item name="colorControlNormal">@color/grey</item>-->
+    <!--        <item name="colorControlActivated">@color/appColor</item>-->
+    <!--    </style>-->
+
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/appColor</item>
+    </style>
+
+    <style name="MyAppTheme.NumberPicker" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorControlNormal">@color/appColor</item>
+
+    </style>
+
+    <style name="Color1SwitchStyle">
+        <item name="colorControlActivated">@color/appColor</item>
+    </style>
+
+
+    <!--    <style name="My.TextInputLayout.FilledBox.Dense" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">-->
+    <!--        <item name="materialThemeOverlay">@style/MyThemeOverlayFilledDense</item>-->
+    <!--    </style>-->
+
+    <!--    <style name="MyThemeOverlayFilledDense">-->
+    <!--        <item name="editTextStyle">@style/MyTextInputEditText_filledBox_dense-->
+    <!--        </item>-->
+    <!--    </style>-->
+
+    <style name="MyTextInputEditText_filledBox_dense" parent="@style/Widget.MaterialComponents.TextInputEditText.FilledBox.Dense">
+        <item name="android:paddingStart" ns2:ignore="NewApi">4dp</item>
+        <item name="android:paddingEnd" ns2:ignore="NewApi">4dp</item>
+        <item name="android:paddingLeft">4dp</item>
+        <item name="android:paddingRight">4dp</item>
+    </style>
+
+    <style name="MyDatePickerDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/appColor</item>
+        <item name="android:buttonBarPositiveButtonStyle">@style/DatePickerButtonStyle</item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/DatePickerButtonStyle</item>
+    </style>
+
+    <style name="DatePickerButtonStyle" parent="Base.Widget.AppCompat.Button.Borderless">
+        <item name="android:textColor">@color/appColor</item>
+        <item name="android:backgroundTint">@color/white</item>
+    </style>
+
+    <style name="DialogDate" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/appColor</item>
+        <item name="android:buttonBarPositiveButtonStyle">@style/DatePickerButtonStyle</item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/DatePickerButtonStyle</item>
+    </style>
+
+    <!--    <style name="ChatBackground" parent="AppTheme">-->
+    <!--        <item name="android:windowBackground">@drawable/signin_pattern</item>-->
+    <!--    </style>-->
+
+    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+
+
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/dialog_bg</item>
+    </style>
+
+
+    <style name="Theme.TestBottom.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.TestBottom.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+
+    <!--Buttons Styles-->
+    <style name="RoundedButtonBlueStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/rounded_touch_selector</item>
+        <item name="android:minHeight">40dp</item>
+        <item name="android:paddingLeft">@dimen/dp_16</item>
+        <item name="android:paddingRight">@dimen/dp_16</item>
+    </style>
+
+    <!--    Text Views-->
+    <style name="Main1TextBold">
+        <item name="android:textColor">@color/appColor</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Medium</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Main1Text">
+        <item name="android:textColor">@color/appColor</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Medium</item>
+    </style>
+
+    <style name="Main2TextBold">
+        <item name="android:textColor">@color/appColor</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Small</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Main2Text">
+        <item name="android:textColor">@color/appColor</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Small</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Main3Text">
+        <item name="android:textColor">@color/appColor</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Small</item>
+    </style>
+
+    <!--    Text Views-->
+    <style name="Gray1TextBold">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Medium</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Gray1Text">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Medium</item>
+    </style>
+
+    <style name="Gray2TextBold">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Small</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Gray2Text">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Small</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Gray3Text">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Small</item>
+    </style>
+
+    <style name="FilePickerActivityTheme" parent="LibAppTheme">
+        <item name="colorPrimary">?android:colorBackground</item>
+        <item name="colorPrimaryDark">?android:colorBackground</item>
+        <item name="colorAccent">@color/teal_700</item>
+        <item name="android:colorBackground">@android:color/background_light</item>
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="toolbarStyle">@style/ToolbarTheme</item>
+        <item name="tabStyle">@style/PickerTabLayout</item>
+    </style>
+
+    <style name="WhiteRadioButtonStyle" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="buttonTint">@drawable/rb_touch_selector</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+</resources>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context=".Teacher.GroupsResults.View.GroupsResultsActivity">
+
+    <include layout="@layout/header_title_with_back"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rrFirst">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.github.florent37.shapeofview.shapes.RoundRectView
+                android:id="@+id/rrAskQuestions"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="@dimen/dp_16"
+                app:shape_roundRect_bottomLeftRadius="5dp"
+                app:shape_roundRect_bottomRightRadius="5dp"
+                app:shape_roundRect_topLeftRadius="5dp"
+                app:shape_roundRect_topRightRadius="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white">
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="8dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/green" />
+
+                    <RelativeLayout
+                        android:id="@+id/rlSendQuestion"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_toEndOf="@+id/view">
+
+                        <ImageView
+                            android:id="@+id/ivAskQuestions"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="10dp"
+                            android:src="@drawable/ic_absent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="10dp"
+                            android:layout_toEndOf="@+id/ivAskQuestions"
+                            android:text="@string/sendQuestionsToGroups"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+            <com.github.florent37.shapeofview.shapes.RoundRectView
+                android:id="@+id/rrUpdateResultsList"
+                android:layout_width="match_parent"
+                android:layout_below="@id/rrAskQuestions"
+                android:layout_height="70dp"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:foreground="?selectableItemBackground"
+                app:shape_roundRect_bottomLeftRadius="5dp"
+                app:shape_roundRect_bottomRightRadius="5dp"
+                app:shape_roundRect_topLeftRadius="5dp"
+                app:shape_roundRect_topRightRadius="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white">
+
+                    <View
+                        android:id="@+id/view2"
+                        android:layout_width="8dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/blue" />
+
+                    <RelativeLayout
+                        android:id="@+id/rlSendQuestion2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_toEndOf="@+id/view2">
+
+                        <ImageView
+                            android:id="@+id/ivAskQuestions2"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="10dp"
+                            android:src="@drawable/ic_update_results_list" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="10dp"
+                            android:layout_toEndOf="@+id/ivAskQuestions2"
+                            android:text="@string/updateResultsListOfGroup"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+
+            </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+
+            <RelativeLayout
+                android:id="@+id/relativeListOfSections"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rrUpdateResultsList"
+                android:layout_marginTop="@dimen/dp_16">
+
+                <ImageView
+                    android:id="@+id/ivReport"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:src="@drawable/btn_reports" />
+
+                <TextView
+                    android:id="@+id/tvListOfRequests"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/ivReport"
+                    android:text="@string/groupResults"
+                    android:textColor="@color/appColor"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <com.cooltechworks.views.shimmer.ShimmerRecyclerView
+                android:id="@+id/rvAnswers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeListOfSections"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="@dimen/dp_16" />
+
+            <TextView
+                android:id="@+id/rvEmptyView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relativeListOfSections"
+                android:layout_marginTop="@dimen/dp_32"
+                android:layout_centerHorizontal="true"
+                android:text="@string/groups_results_rv_empty"
+                android:visibility="invisible"/>
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

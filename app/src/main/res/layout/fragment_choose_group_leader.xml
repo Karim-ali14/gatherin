@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context=".Teacher.ChooseGroupCaptain.View.ChooseGroupCaptainActivity">
+
+    <include layout="@layout/header_2titles_with_back"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tvAssure"
+        android:layout_below="@+id/rrFirst"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvCreateEditGroupTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="30dp"
+                android:text="@string/chooseGroupCaptain"
+                android:textColor="@color/appColor"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@+id/membersRVEmpty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_32"
+                    android:text="@string/group_members_rv_empty"
+                    android:visibility="invisible" />
+
+                <com.cooltechworks.views.shimmer.ShimmerRecyclerView
+                    android:id="@+id/rvMembers"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_marginBottom="10dp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/chooseLeaderConfirmBtn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_32"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:layout_marginBottom="@dimen/dp_16"
+        android:background="@drawable/drawable_app_color_5_radious"
+        android:gravity="center"
+        android:text="@string/confirm_btn"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+
+</RelativeLayout>

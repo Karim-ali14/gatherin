@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_marginEnd="@dimen/dp_8"
+    android:layout_marginTop="@dimen/dp_8"
+    android:layout_marginStart="@dimen/dp_8"
+    android:layout_marginBottom="4dp"
+    android:layoutDirection="ltr">
+
+<FrameLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/chat_sent_msg"
+    android:layout_gravity="end"
+    android:paddingEnd="@dimen/dp_48"
+    android:paddingStart="@dimen/dp_40">
+
+    <ImageButton
+        android:id="@+id/ibPlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginBottom="@dimen/dp_16"
+        android:src="@drawable/ic_play_record_on"
+        android:background="?selectableItemBackground"/>
+
+    <ImageButton
+        android:id="@+id/ibPause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginBottom="@dimen/dp_16"
+        android:src="@drawable/ic_pause"
+        android:visibility="invisible"
+        android:background="?selectableItemBackground"/>
+
+</FrameLayout>
+
+</FrameLayout>

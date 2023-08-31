@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp_8"
+    android:layout_marginBottom="@dimen/dp_8"
+    android:background="@drawable/drawablee_light_purple_5_radius">
+
+
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:textColor="#51b704"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="50$" />
+
+    <ImageView
+        android:id="@+id/ivMedal"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_medal_golden"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSubscriptionName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_toEndOf="@+id/ivMedal"
+        android:textColor="@color/appColor"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivMedal"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Golden Subscription" />
+
+    <TextView
+        android:id="@+id/tvCountSections"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/darkRed"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tvPrice"
+        app:layout_constraintStart_toStartOf="@+id/tvSubscriptionName"
+        app:layout_constraintTop_toBottomOf="@+id/tvSubscriptionName"
+        tools:text="Up to 6 sections" />
+
+    <TextView
+        android:id="@+id/tvCountGroups"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:textColor="@color/darkRed"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvIsSubscribed"
+        app:layout_constraintStart_toStartOf="@+id/tvCountSections"
+        app:layout_constraintTop_toBottomOf="@+id/tvCountSections"
+        tools:text="6 groups in this section" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha=".3"
+        android:background="@color/black"
+        android:visibility="gone"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:id="@+id/tvIsSubscribed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/subscribedLabel"
+        android:textColor="@color/appColor"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvPrice"
+        app:layout_constraintTop_toTopOf="@+id/tvCountGroups" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

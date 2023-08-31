@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:minWidth="200dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="@dimen/dp_8"
+    android:layout_marginStart="@dimen/dp_64"
+    android:layout_marginBottom="4dp"
+    android:layoutDirection="ltr"
+    android:paddingStart="@dimen/dp_4">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="160dp"
+        android:background="@drawable/chat_sent_msg"
+        android:layout_marginEnd="@dimen/dp_8"
+        android:paddingEnd="@dimen/dp_12"
+        android:layout_gravity="end">
+
+        <ImageView
+            android:id="@+id/vv"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            tools:src="@drawable/splash_bg"
+            android:background="@color/grey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageButton
+            android:id="@+id/ibPlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?selectableItemBackground"
+            android:src="@drawable/ic_play"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+</FrameLayout>

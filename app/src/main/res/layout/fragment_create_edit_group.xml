@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    tools:context=".Teacher.CreateNewGroup.View.CreateNewGroupActivity">
+
+    <include layout="@layout/header_with_cancel" />
+
+    <TextView
+        android:id="@+id/tvCreateEditGroupTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivBack"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_16"
+        android:text="@string/createNewGroup"
+        android:textColor="@color/appColor"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/confirmBtn"
+        android:layout_below="@+id/tvCreateEditGroupTitle"
+        android:layout_marginBottom="@dimen/dp_16">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="20dp">
+
+                <ImageView
+                    android:id="@+id/ivUser1"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/phone_normal" />
+
+                <EditText
+                    android:id="@+id/etGroupName"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_toEndOf="@+id/ivUser1"
+                    android:background="@null"
+                    android:gravity="start|center_vertical"
+                    android:hint="@string/groupName"
+                    android:inputType="text"
+                    android:maxLength="50"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/appColorLight"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/etGroupName"
+                    android:layout_toEndOf="@+id/ivUser1"
+                    android:background="@color/viewColor" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlUpdateGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_8"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:id="@+id/rlNewMember"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+
+                    <ImageView
+                        android:id="@+id/ivUser2"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="@dimen/dp_8"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/phone_normal" />
+
+                    <ImageView
+                        android:id="@+id/ivShare"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/dp_8"
+                        android:padding="@dimen/dp_8"
+                        android:src="@drawable/shape" />
+
+                    <TextView
+                        android:id="@+id/tvAddMember"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="@dimen/dp_16"
+                        android:layout_toStartOf="@+id/ivShare"
+                        android:layout_toEndOf="@+id/ivUser2"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:hint="@string/addMemberToGroup"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/appColorLight"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/tvAddMember"
+                        android:layout_toEndOf="@+id/ivUser2"
+                        android:background="@color/viewColor" />
+
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvMembers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rlNewMember"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:minHeight="56dp"
+                    android:scrollbars="vertical"
+                    app:layoutManager="LinearLayoutManager" />
+
+                <TextView
+                    android:id="@+id/membersRVEmpty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/rvMembers"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_32"
+                    android:text="@string/members_rv_empty"
+                    android:visibility="invisible" />
+
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignBottom="@+id/rvMembers"
+                    android:layout_marginTop="@dimen/dp_16"/>
+
+                <Button
+                    android:id="@+id/retry_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignBottom="@+id/rvMembers"
+                    android:text="@string/retry"
+                    android:layout_marginTop="@dimen/dp_32"/>
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/confirmBtn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:layout_marginBottom="@dimen/dp_16"
+        android:background="@drawable/drawable_app_color_5_radious"
+        android:gravity="center"
+        android:text="@string/confirm_btn"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+
+
+    <ImageView
+        android:id="@+id/ivFooter"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/login_bg" />
+</RelativeLayout>

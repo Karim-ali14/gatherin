@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context=".User.SendMessageToLeader.View.SendMessageToLeaderActivity">
+
+    <include layout="@layout/header_2titles_with_cancel"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rrFirst"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/white">
+
+                <RelativeLayout
+                    android:id="@+id/rlLeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="10dp">
+
+                    <RelativeLayout
+                        android:id="@+id/relativeImage"
+                        android:layout_width="90dp"
+                        android:layout_height="wrap_content">
+
+                        <com.github.florent37.shapeofview.shapes.CircleView
+                            android:id="@+id/cvParent"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_centerHorizontal="true"
+                            app:shape_circle_borderWidth="1dp">
+
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/ivProfileImage"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/default_image" />
+                            </RelativeLayout>
+
+
+                        </com.github.florent37.shapeofview.shapes.CircleView>
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="7dp"
+                            android:src="@drawable/star_gold" />
+
+                    </RelativeLayout>
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/dp_16"
+                        android:text="@string/leader"
+                        android:textColor="@color/darkRed"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+                <EditText
+                    android:id="@+id/etWriteAnswer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rlLeader"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@null"
+                    android:gravity="end|top"
+                    android:hint="@string/writeAnswerHere"
+                    android:imeOptions="actionDone"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:minLines="6"
+                    android:padding="10dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
+                    android:textDirection="rtl"
+                    android:textSize="14sp" />
+
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btnSend"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:background="@drawable/drawable_app_color_5_radious"
+                android:gravity="center"
+                android:text="@string/sendAnswerToMasterEnabled"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

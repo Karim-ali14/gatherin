@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context=".Teacher.EditProfileTeacher.View.EditProfileTeacherActivity">
+
+    <include layout="@layout/header_title_with_back" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rrFirst"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+
+                <RelativeLayout
+                    android:id="@+id/relativeImage"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:foreground="?selectableItemBackground">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ivProfileImage"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_centerHorizontal="true"
+                        android:scaleType="centerCrop"
+                        tools:src="@drawable/avatar_1_raster" />
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:scaleType="centerCrop"
+                            android:src="@color/profile_circular_bg" />
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_camera2"
+                            android:layout_gravity="center"/>
+
+                    </FrameLayout>
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/tvUserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/relativeImage"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/username"
+                    android:textColor="@color/lightBlack"
+                    android:textSize="14sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeEmail"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="20dp">
+
+                <ImageView
+                    android:id="@+id/ivUser"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/phone_normal" />
+
+                <EditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_toEndOf="@+id/ivUser"
+                    android:background="@null"
+                    android:hint="@string/email"
+                    android:enabled="false"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/appColorLight"
+                    android:textSize="14sp"
+                    android:inputType="textEmailAddress" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toEndOf="@+id/ivUser"
+                    android:background="@color/viewColor" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeUsername"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="20dp">
+
+                <ImageView
+                    android:id="@+id/ivUserName"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/phone_normal" />
+
+                <EditText
+                    android:id="@+id/etUserName"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_toEndOf="@+id/ivUserName"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:background="@null"
+                    android:inputType="textPersonName"
+                    android:hint="@string/username"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/appColorLight"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toEndOf="@+id/ivUserName"
+                    android:background="@color/viewColor" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativePhone"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="20dp">
+
+                <ImageView
+                    android:id="@+id/ivUserPhone"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/phone_normal" />
+
+                <EditText
+                    android:id="@+id/etUserPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_toEndOf="@+id/ivUserPhone"
+                    android:background="@null"
+                    android:hint="@string/phoneNumber"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:inputType="phone"
+                    android:maxLength="15"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/appColorLight"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toEndOf="@+id/ivUserPhone"
+                    android:background="@color/viewColor" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rlCode"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="20dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/ivCode"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/phone_normal" />
+
+                <EditText
+                    android:id="@+id/etCreateNewCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_toEndOf="@+id/ivCode"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="@string/code_placeholder_value"
+                    android:inputType="none"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/appColorLight"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toEndOf="@+id/ivCode"
+                    android:background="@color/viewColor" />
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/tvRegister"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:background="@drawable/drawable_app_color_5_radious"
+                android:gravity="center"
+                android:text="@string/save"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</RelativeLayout>

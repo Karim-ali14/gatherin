@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright 2019, The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/teacher_graph"
+    app:startDestination="@+id/home_screen">
+
+    <fragment
+        android:id="@+id/home_screen"
+        android:name="com.orwa.gatherin.present.teacher.home.TeacherHomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_screen_to_createSectionFragment"
+            app:destination="@id/createSectionFragment" >
+            <argument
+                android:name="param"
+                app:argType="string"
+                app:nullable="true"
+                android:defaultValue="@null" />        </action>
+        <action
+            android:id="@+id/action_home_screen_to_sectionDetailsFragment"
+            app:destination="@id/sectionDetailsFragment" />
+        <action
+            android:id="@+id/action_home_screen_to_editSectionFragment"
+            app:destination="@id/editSectionFragment" />
+        <action
+            android:id="@+id/action_home_screen_to_groupResultsFragment"
+            app:destination="@id/groupResultsFragment" />
+        <action
+            android:id="@+id/action_home_screen_to_notifyReportsStep1Fragment"
+            app:destination="@id/notifyReportsStep1Fragment" />
+        <action
+            android:id="@+id/action_home_screen_to_subscriptionsListFragment2"
+            app:destination="@id/subscriptionsListFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/createSectionFragment"
+        android:name="com.orwa.gatherin.present.teacher.home.section.CreateSectionFragment"
+        android:label="fragment_create_section"
+        tools:layout="@layout/fragment_create_section" />
+    <fragment
+        android:id="@+id/editSectionFragment"
+        android:name="com.orwa.gatherin.present.teacher.home.section.EditSectionFragment"
+        android:label="fragment_edit_section"
+        tools:layout="@layout/fragment_edit_section" />
+    <fragment
+        android:id="@+id/sectionDetailsFragment"
+        android:name="com.orwa.gatherin.present.teacher.home.section.TeacherSectionDetailsFragment"
+        android:label="fragment_section_details"
+        tools:layout="@layout/fragment_section_details" >
+        <action
+            android:id="@+id/action_sectionDetailsFragment_to_createGroupFragment"
+            app:destination="@id/createGroupFragment" />
+        <action
+            android:id="@+id/action_sectionDetailsFragment_to_groupDetailsFragment"
+            app:destination="@id/groupDetailsFragment" />
+        <action
+            android:id="@+id/action_sectionDetailsFragment_to_deptMembersFragment"
+            app:destination="@id/deptMembersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/groupResultsFragment"
+        android:name="com.orwa.gatherin.present.teacher.home.group_results.GroupsResultsFragment"
+        android:label="fragment_group_results"
+        tools:layout="@layout/fragment_group_results" >
+        <action
+            android:id="@+id/action_groupResultsFragment_to_groupResultsDetailsFragment"
+            app:destination="@id/groupResultsDetailsFragment" />
+        <action
+            android:id="@+id/action_groupResultsFragment_to_groupSendQuestionsFragment"
+            app:destination="@id/groupSendQuestionsFragment" />
+        <action
+            android:id="@+id/action_groupResultsFragment_to_chooseDepartmentFragment"
+            app:destination="@id/chooseDepartmentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notifyReportsStep1Fragment"
+        android:name="com.orwa.gatherin.present.teacher.home.send_notify.SendNotifyReportStep1Fragment"
+        android:label="fragment_notify_reports_step1"
+        tools:layout="@layout/fragment_notify_reports_step1" >
+        <action
+            android:id="@+id/action_notifyReportsStep1Fragment_to_notifyReportsStep2Fragment"
+            app:destination="@id/notifyReportsStep2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notifyReportsStep2Fragment"
+        android:name="com.orwa.gatherin.present.teacher.home.send_notify.SendNotifyReportStep2Fragment"
+        android:label="fragment_notify_reports_step2"
+        tools:layout="@layout/fragment_notify_reports_step2" />
+    <fragment
+        android:id="@+id/groupResultsDetailsFragment"
+        android:name="com.orwa.gatherin.present.teacher.home.group_results.GroupResultsDetailsFragment"
+        android:label="GroupResultsDetailsFragment"
+        tools:layout="@layout/fragment_group_results_details"/>
+    <fragment
+        android:id="@+id/groupSendQuestionsFragment"
+        android:name="com.orwa.gatherin.present.teacher.home.send_quest.GroupSendQuestionsFragment"
+        android:label="GroupSendQuestionsFragment"
+        tools:layout="@layout/fragment_group_send_questions"/>
+    <fragment
+        android:id="@+id/createGroupFragment"
+        android:name="com.orwa.gatherin.present.teacher.group.CreateEditGroupFragment"
+        android:label="CreateGroupFragment">
+        <action
+            android:id="@+id/action_createGroupFragment_to_chooseGroupLeaderFragment"
+            app:destination="@id/chooseGroupLeaderFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/groupDetailsFragment"
+        android:name="com.orwa.gatherin.present.common.group.GroupDetailsFragment"
+        android:label="fragment_group_details"
+        tools:layout="@layout/fragment_group_details" >
+        <action
+            android:id="@+id/action_groupDetailsFragment_to_chooseGroupLeaderFragment"
+            app:destination="@id/chooseGroupLeaderFragment" />
+        <action
+            android:id="@+id/action_groupDetailsFragment_to_groupContactFragment2"
+            app:destination="@id/groupContactFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseGroupLeaderFragment"
+        android:name="com.orwa.gatherin.present.teacher.group.ChooseGroupLeaderFragment"
+        android:label="ChooseGroupLeaderFragment" />
+    <fragment
+        android:id="@+id/groupContactFragment2"
+        android:name="com.orwa.gatherin.present.common.contact.ContactFragment"
+        android:label="GroupContactFragment" >
+        <action
+            android:id="@+id/action_groupContactFragment2_to_chatImageActivity2"
+            app:destination="@id/chatImageActivity2" />
+    </fragment>
+    <fragment
+        android:id="@+id/subscriptionsListFragment2"
+        android:name="com.orwa.gatherin.present.teacher.profile.SubscriptionsListFragment"
+        android:label="SubscriptionsListFragment" />
+    <fragment
+        android:id="@+id/chooseDepartmentFragment"
+        android:name="com.orwa.gatherin.present.teacher.home.group_results.ChooseDepartmentFragment"
+        android:label="ChooseDepartmentFragment" >
+        <action
+            android:id="@+id/action_chooseDepartmentFragment_to_setDepartmentResultsFragment"
+            app:destination="@id/setDepartmentResultsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/setDepartmentResultsFragment"
+        android:name="com.orwa.gatherin.present.teacher.home.group_results.SetDepartmentResultsFragment"
+        android:label="DepartmentResultsFragment" />
+    <activity
+        android:id="@+id/chatImageActivity2"
+        android:name="com.orwa.gatherin.present.common.contact.ChatImageActivity"
+        android:label="activity_chat_image"
+        tools:layout="@layout/activity_chat_image" />
+    <fragment
+        android:id="@+id/deptMembersFragment"
+        android:name="com.orwa.gatherin.present.common.section.DeptMembersFragment"
+        android:label="DeptMembersFragment" />
+
+</navigation>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:orientation="vertical">
+
+    <com.github.florent37.shapeofview.shapes.RoundRectView
+        android:id="@+id/item_rounded"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginRight="150dp"
+        android:layout_marginBottom="5dp"
+        app:shape_roundRect_bottomLeftRadius="15dp"
+        app:shape_roundRect_bottomRightRadius="15dp"
+        app:shape_roundRect_topLeftRadius="0dp"
+        app:shape_roundRect_topRightRadius="15dp">
+
+        <RelativeLayout
+            android:id="@+id/relativeTextType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/appColor"
+            android:gravity="center"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/tvMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+        </RelativeLayout>
+    </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+
+</LinearLayout>

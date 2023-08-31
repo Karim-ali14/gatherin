@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:background="@color/green"
+    android:layoutDirection="ltr">
+
+    <RadioButton
+        android:id="@+id/rbFirst"
+        style="@style/WhiteRadioButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_marginTop="@dimen/dp_8"
+        android:gravity="left|center_vertical"
+        app:layout_constraintEnd_toStartOf="@+id/progress1"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="رحب" />
+
+    <ProgressBar
+        android:id="@+id/progress1"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_8"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/rbFirst"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@+id/rbFirst"
+        app:layout_constraintTop_toTopOf="@+id/rbFirst" />
+
+    <TextView
+        android:id="@+id/tvRate1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="@dimen/dp_8"
+        android:paddingStart="@dimen/dp_8"
+        android:textColor="@color/white"
+        style="@style/Main3Text"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/rbFirst"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rbFirst"
+        tools:text="50%" />
+
+    <RadioButton
+        android:id="@+id/rbSecond"
+        style="@style/WhiteRadioButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_8"
+        android:gravity="left|center_vertical"
+        app:layout_constraintEnd_toStartOf="@+id/progress2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rbFirst"
+        tools:text="second Choice" />
+
+    <ProgressBar
+        android:id="@+id/progress2"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/dp_8"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/rbSecond"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintStart_toEndOf="@+id/rbSecond"
+        app:layout_constraintTop_toTopOf="@+id/rbSecond" />
+
+    <RadioButton
+        android:id="@+id/rbThird"
+        style="@style/WhiteRadioButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_8"
+        android:gravity="left|center_vertical"
+        app:layout_constraintEnd_toStartOf="@+id/progress3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rbSecond"
+        tools:text="third Choice"
+        android:visibility="gone"/>
+
+    <ProgressBar
+        android:id="@+id/progress3"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/dp_8"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/rbThird"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintStart_toEndOf="@+id/rbThird"
+        app:layout_constraintTop_toTopOf="@+id/rbThird" />
+
+    <RadioButton
+        android:id="@+id/rbFourth"
+        style="@style/WhiteRadioButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_8"
+        android:gravity="left|center_vertical"
+        app:layout_constraintEnd_toStartOf="@+id/progress4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rbThird"
+        tools:text="fourth Choice"
+        android:visibility="gone"/>
+
+    <ProgressBar
+        android:id="@+id/progress4"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_8"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/rbFourth"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintStart_toEndOf="@+id/rbFourth"
+        app:layout_constraintTop_toTopOf="@+id/rbFourth" />
+
+    <TextView
+        android:id="@+id/tvRate2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="@dimen/dp_8"
+        android:paddingStart="@dimen/dp_8"
+        android:textColor="@color/white"
+        style="@style/Main3Text"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/rbSecond"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rbSecond"
+        tools:text="50%" />
+
+    <TextView
+        android:id="@+id/tvRate3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="@dimen/dp_8"
+        android:paddingStart="@dimen/dp_8"
+        android:textColor="@color/white"
+        style="@style/Main3Text"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/rbThird"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rbThird"
+        tools:text="50%"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/tvRate4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="@dimen/dp_8"
+        android:paddingStart="@dimen/dp_8"
+        android:textColor="@color/white"
+        style="@style/Main3Text"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/rbFourth"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rbFourth"
+        tools:text="50%"
+        android:visibility="gone"/>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:barrierDirection="start"
+        app:constraint_referenced_ids="tvRate1" />
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="horizontal">-->
+
+    <!--        <RadioButton-->
+    <!--            android:id="@+id/rbFirst"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            tools:text="First Choice"-->
+    <!--            style="@style/WhiteRadioButtonStyle"/>-->
+
+    <!--        <ProgressBar-->
+    <!--            android:id="@+id/progress1"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginStart="@dimen/dp_8"-->
+    <!--            android:layout_marginEnd="@dimen/dp_8"-->
+    <!--            android:visibility="invisible"-->
+    <!--            android:layout_gravity="center_vertical"-->
+    <!--            style="?android:attr/progressBarStyleSmall" />-->
+    <!--        -->
+    <!--        <View-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="1dp"-->
+    <!--            android:layout_weight="1"/>-->
+    <!--        -->
+    <!--        <TextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:textColor="@color/white"-->
+    <!--            tools:text="50%"-->
+    <!--            android:layout_gravity="center_vertical"-->
+    <!--            android:layout_marginEnd="@dimen/dp_8"/>-->
+    <!--    </LinearLayout>-->
+    <!--    -->
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="horizontal">-->
+
+    <!--        <RadioButton-->
+    <!--            android:id="@+id/rbSecond"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            tools:text="second Choice bla bla bala bal balb albab balbbla bablablalbalbalbablbal"-->
+    <!--            style="@style/WhiteRadioButtonStyle"/>-->
+
+    <!--        <ProgressBar-->
+    <!--            android:id="@+id/progress2"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginStart="@dimen/dp_8"-->
+    <!--            android:layout_marginEnd="@dimen/dp_8"-->
+    <!--            android:visibility="invisible"-->
+    <!--            android:layout_gravity="center_vertical"-->
+    <!--            style="?android:attr/progressBarStyleSmall" />-->
+
+    <!--        <View-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="1dp"-->
+    <!--            android:layout_weight="1"/>-->
+
+    <!--        <TextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:textColor="@color/white"-->
+    <!--            tools:text="50%"-->
+    <!--            android:layout_gravity="center_vertical"-->
+    <!--            android:layout_marginEnd="@dimen/dp_8"/>-->
+    <!--    </LinearLayout>-->
+    <!--    -->
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/llThirdOption"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="horizontal">-->
+
+    <!--        <RadioButton-->
+    <!--            android:id="@+id/rbThird"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            tools:text="third Choice"-->
+    <!--            style="@style/WhiteRadioButtonStyle"/>-->
+
+    <!--        <ProgressBar-->
+    <!--            android:id="@+id/progress3"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginStart="@dimen/dp_8"-->
+    <!--            android:layout_marginEnd="@dimen/dp_8"-->
+    <!--            android:visibility="invisible"-->
+    <!--            android:layout_gravity="center_vertical"-->
+    <!--            style="?android:attr/progressBarStyleSmall" />-->
+
+    <!--        <View-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="1dp"-->
+    <!--            android:layout_weight="1"/>-->
+
+    <!--        <TextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:textColor="@color/white"-->
+    <!--            tools:text="50%"-->
+    <!--            android:layout_gravity="center_vertical"-->
+    <!--            android:layout_marginEnd="@dimen/dp_8"/>-->
+    <!--    </LinearLayout>-->
+    <!--    -->
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/llFourthOption"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="horizontal">-->
+
+    <!--        <RadioButton-->
+    <!--            android:id="@+id/rbFourth"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            tools:text="third Choice"-->
+    <!--            style="@style/WhiteRadioButtonStyle"/>-->
+
+    <!--        <ProgressBar-->
+    <!--            android:id="@+id/progress4"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginStart="@dimen/dp_8"-->
+    <!--            android:layout_marginEnd="@dimen/dp_8"-->
+    <!--            android:visibility="invisible"-->
+    <!--            android:layout_gravity="center_vertical"-->
+    <!--            style="?android:attr/progressBarStyleSmall" />-->
+
+    <!--        <View-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="1dp"-->
+    <!--            android:layout_weight="1"/>-->
+
+    <!--        <TextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:textColor="@color/white"-->
+    <!--            tools:text="50%"-->
+    <!--            android:layout_gravity="center_vertical"-->
+    <!--            android:layout_marginEnd="@dimen/dp_8"/>-->
+    <!--    </LinearLayout>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

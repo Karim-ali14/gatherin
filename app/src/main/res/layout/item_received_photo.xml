@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layoutDirection="ltr">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/chat_iv"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_marginTop="@dimen/dp_8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/avatar_1_raster" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_8"
+        android:background="@drawable/chat_received_msg_bg"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_8"
+        app:layout_constraintStart_toEndOf="@+id/chat_iv"
+        app:layout_constraintTop_toBottomOf="@+id/tvPersonName">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            android:adjustViewBounds="true"
+            android:minWidth="80dp"
+            android:paddingStart="8dp"
+            android:scaleType="fitStart"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            tools:src="@drawable/avatar_1_raster"
+            tools:text="Hello this is a sample text Hello this is a sample text Hello this is a sample text" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvPersonName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_marginTop="@dimen/dp_8"
+        tools:text="person name"
+        app:layout_constraintStart_toEndOf="@+id/chat_iv"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

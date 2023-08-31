@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Teacher.SubscriptionsList.View.SubscriptionsListActivity">
+
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:padding="4dp"
+        android:src="@drawable/ab_close" />
+
+    <TextView
+        android:id="@+id/tvCreateEditGroupTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivBack"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/subscriptionsList"
+        android:textColor="@color/appColor"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <com.cooltechworks.views.shimmer.ShimmerRecyclerView
+        android:id="@+id/rvSubscriptionsList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tvAssure"
+        android:layout_below="@+id/tvCreateEditGroupTitle"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp" />
+
+    <TextView
+        android:id="@+id/tvAssure"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/drawable_app_color_5_radious"
+        android:gravity="center"
+        android:text="@string/assure"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+</RelativeLayout>

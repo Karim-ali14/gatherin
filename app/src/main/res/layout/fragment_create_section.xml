@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Teacher.CreateNewSection.View.CreateNewSectionActivity">
+
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:padding="4dp"
+        android:src="@drawable/ab_close" />
+
+    <TextView
+        android:id="@+id/tvCreateEditGroupTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivBack"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="32dp"
+        android:text="@string/createNewSection"
+        android:textColor="@color/appColor"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tvCreateEditGroupTitle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="20dp">
+
+                <ImageView
+                    android:id="@+id/ivUser1"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/phone_normal" />
+
+                <EditText
+                    android:id="@+id/etSectionName"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:hint="@string/newSectionName"
+                    android:inputType="text"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/appColorLight"
+                    android:textSize="14sp"
+                    android:maxLength="40"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toEndOf="@+id/ivUser1"
+                    android:background="@color/viewColor" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="20dp">
+
+                <ImageView
+                    android:id="@+id/ivUser2"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/phone_normal" />
+
+                <ImageView
+                    android:id="@+id/ivShare"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/dp_8"
+                    android:padding="@dimen/dp_4"
+                    android:src="@drawable/share_link" />
+
+                <EditText
+                    android:id="@+id/etSectionCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:textAllCaps="true"
+                    android:hint="@string/createPrivateCode"
+                    android:inputType="textCapCharacters"
+                    android:textColor="@color/black"
+                    android:maxLength="6"
+                    android:textColorHint="@color/appColorLight"
+                    android:textSize="14sp"
+                    android:layout_toStartOf="@+id/ivShare"/>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toEndOf="@+id/ivUser2"
+                    android:background="@color/viewColor" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/ivAuto"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_auto" />
+
+                <CheckBox
+                    android:id="@+id/cbAuto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/create_section_auto_code"/>
+
+
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/confirm_btn"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_32"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:layout_marginBottom="@dimen/dp_16"
+                android:background="@drawable/drawable_app_color_5_radious"
+                android:gravity="center"
+                android:text="@string/confirm_btn"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/ivFooter"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/login_bg" />
+</RelativeLayout>

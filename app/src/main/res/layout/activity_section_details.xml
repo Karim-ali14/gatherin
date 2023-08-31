@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context=".Teacher.SectionDetails.View.SectionDetailsActivity">
+
+    <com.github.florent37.shapeofview.shapes.RoundRectView
+        android:id="@+id/rrFirst"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:shape_roundRect_bottomLeftRadius="20dp"
+        app:shape_roundRect_bottomRightRadius="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:padding="5dp"
+                android:src="@drawable/ab_back" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="@string/sectionDetails"
+                android:textColor="@color/appColor"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+    </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/floating_action_button"
+        android:layout_below="@+id/rrFirst">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--rrfs-->
+            <com.github.florent37.shapeofview.shapes.RoundRectView
+                android:id="@+id/rrfs"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                app:shape_roundRect_bottomLeftRadius="5dp"
+                app:shape_roundRect_bottomRightRadius="5dp"
+                app:shape_roundRect_topLeftRadius="5dp"
+                app:shape_roundRect_topRightRadius="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white">
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="8dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/darkRed" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_toEndOf="@+id/view">
+
+                        <ImageView
+                            android:id="@+id/ivCourses"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:src="@drawable/courses" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_toEndOf="@+id/ivCourses"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:id="@+id/bla"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/sectionSymbol"
+                                android:textColor="@color/appColorLight"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/tvCode"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/bla"
+                                android:layout_centerVertical="true"
+                                android:layout_marginTop="5dp"
+                                tools:text="C19B34"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlCopy"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_below="@+id/ivCourses"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="@drawable/drawable_grey">
+
+                            <ImageView
+                                android:id="@+id/ivCopy"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="10dp"
+                                android:src="@drawable/share_link" />
+
+                            <TextView
+                                android:id="@+id/tvLink"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="10dp"
+                                android:layout_toEndOf="@+id/ivCopy"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="https://www.flaticon.com/free-icon/close_1828665?term=x"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+
+            </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+            <RelativeLayout
+                android:id="@+id/relativeListOfSections"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rrfs"
+                android:layout_marginTop="15dp">
+
+                <ImageView
+                    android:id="@+id/ivReport"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="15dp"
+                    android:src="@drawable/btn_reports" />
+
+                <TextView
+                    android:id="@+id/tvListOfRequests"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/ivReport"
+                    android:text="@string/listOfGroups"
+                    android:textColor="@color/appColor"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/membersList"
+                    style="@style/RoundedButtonBlueStyle"
+                    android:drawableEnd="@drawable/ic_ab_back"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/dp_16"/>
+            </RelativeLayout>
+
+            <com.cooltechworks.views.shimmer.ShimmerRecyclerView
+                android:id="@+id/rvMembers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeListOfSections"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp" />
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floating_action_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="15dp"
+        app:backgroundTint="@color/darkRed"
+        app:srcCompat="@drawable/add"
+        app:tint="@color/white" />
+
+</RelativeLayout>

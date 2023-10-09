@@ -29,7 +29,7 @@
                 android:src="@drawable/ab_back" />
 
             <TextView
-                android:layout_width="wrap_cogit remote add originntent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"

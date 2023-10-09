@@ -3,6 +3,7 @@ package com.orwa.gatherin.present.start
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import com.orwa.gatherin.MyApplication
 import com.orwa.gatherin.R
@@ -22,7 +23,6 @@ class StartActivity : BaseActivity() {
 
 //        Pref.testSP(this)
         handleIntent(intent)
-
 //        Log.i(TAG,"CURRENT_DEFAULT_LANG=${Locale.getDefault().language}")
 
     }

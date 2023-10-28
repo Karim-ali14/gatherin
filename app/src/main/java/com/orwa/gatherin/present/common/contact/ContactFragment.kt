@@ -39,9 +39,12 @@ import com.orwa.gatherin.model.chat.Question
 import com.orwa.gatherin.model.chat.ReportReq
 import com.orwa.gatherin.present.student.group.SendResponseToMasterActivity
 import com.orwa.gatherin.present.teacher.MyActivityViewModel
+import com.orwa.gatherin.present.teacher.profile.EditProfileFragment
 import com.orwa.gatherin.utils.*
 import com.risingpark.risingvoiceindicator.RisingVoiceIndicator
 import com.risingpark.risingvoiceindicator.VoiceIndicator
+import com.vmadalin.easypermissions.EasyPermissions
+import com.vmadalin.easypermissions.dialogs.SettingsDialog
 import droidninja.filepicker.FilePickerBuilder
 import droidninja.filepicker.FilePickerConst
 import io.socket.client.Ack
@@ -59,7 +62,7 @@ import java.io.IOException
 import java.net.URISyntaxException
 
 
-class ContactFragment : BaseFragment(), TextWatcher {
+class ContactFragment : BaseFragment(), TextWatcher,EasyPermissions.PermissionCallbacks  {
 
     private val TAG = ContactFragment::class.java.simpleName
 
@@ -118,21 +121,64 @@ class ContactFragment : BaseFragment(), TextWatcher {
         }
 
 
-    private fun pickGalleryImages() {
-        if (ContextCompat.checkSelfPermission(
-                requireContext(),
-                Manifest.permission.READ_EXTERNAL_STORAGE
-            ) != PackageManager.PERMISSION_GRANTED
-        ) {
 
-            requestReadExternalPermission.launch(
-                arrayOf(
-                    Manifest.permission.READ_EXTERNAL_STORAGE
-                )
-            )
-        } else
+    private fun pickGalleryImages() {
+        if (hasPhotoPermission())
             launchFilePicker()
+        else
+            requestPhotoPermission()
     }
+
+    fun hasPhotoPermission() =
+        EasyPermissions.hasPermissions(
+            requireContext(),Manifest.permission.READ_EXTERNAL_STORAGE
+        )
+
+    fun requestPhotoPermission(){
+        EasyPermissions.requestPermissions(
+            this,
+            "this process cat not work without this permission .",
+            EditProfileFragment.PHOTO_PERMISSION,
+            Manifest.permission.READ_EXTERNAL_STORAGE
+        )
+    }
+
+    override fun onPermissionsDenied(requestCode: Int, perms: List<String>) {
+        if (EasyPermissions.somePermissionPermanentlyDenied(this, perms)){
+            SettingsDialog.Builder(requireActivity()).build().show()
+        }else{
+            requestPhotoPermission()
+        }
+    }
+
+    override fun onPermissionsGranted(requestCode: Int, perms: List<String>) {
+        launchFilePicker()
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        EasyPermissions.onRequestPermissionsResult(requestCode,permissions,grantResults,this)
+    }
+
+//    private fun pickGalleryImages() {
+//        if (ContextCompat.checkSelfPermission(
+//                requireContext(),
+//                Manifest.permission.READ_EXTERNAL_STORAGE
+//            ) != PackageManager.PERMISSION_GRANTED
+//        ) {
+//
+//            requestReadExternalPermission.launch(
+//                arrayOf(
+//                    Manifest.permission.READ_EXTERNAL_STORAGE
+//                )
+//            )
+//        } else
+//            launchFilePicker()
+//    }
 
     private fun startRecordingProcess() {
         if (ContextCompat.checkSelfPermission(

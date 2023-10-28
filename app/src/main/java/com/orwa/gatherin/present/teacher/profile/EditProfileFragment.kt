@@ -18,10 +18,14 @@ package com.orwa.gatherin.present.teacher.profile
 
 import android.Manifest
 import android.app.Activity
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
+import android.provider.Settings
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,13 +36,16 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import com.mobsandgeeks.saripaar.annotation.Length
+import com.mobsandgeeks.saripaar.annotation.NotEmpty
+import com.orwa.gatherin.BuildConfig
 import com.orwa.gatherin.R
 import com.orwa.gatherin.base.AuthNetworkState
 import com.orwa.gatherin.base.BaseValidateTeacherFragment
 import com.orwa.gatherin.databinding.FragmentEditProfileBinding
 import com.orwa.gatherin.utils.*
-import com.mobsandgeeks.saripaar.annotation.Length
-import com.mobsandgeeks.saripaar.annotation.NotEmpty
+import com.vmadalin.easypermissions.EasyPermissions
+import com.vmadalin.easypermissions.dialogs.SettingsDialog
 import droidninja.filepicker.FilePickerBuilder
 import droidninja.filepicker.FilePickerConst
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -52,7 +59,7 @@ import java.io.File
 /**
  * Shows a profile screen for a user, taking the name from the arguments.
  */
-class EditProfileFragment : BaseValidateTeacherFragment() {
+class EditProfileFragment : BaseValidateTeacherFragment(),EasyPermissions.PermissionCallbacks {
 
     private val TAG = EditProfileFragment::class.java.simpleName
 
@@ -67,6 +74,10 @@ class EditProfileFragment : BaseValidateTeacherFragment() {
     @NotEmpty(sequence = 1, messageResId = R.string.validate_empty_field)
     @Length(sequence = 2, min = 3, messageResId = R.string.validate_input_field_length_3)
     private lateinit var nameEt: EditText
+
+    companion object{
+        const val PHOTO_PERMISSION = 120
+    }
 
 //    @NotEmpty(sequence = 1, messageResId = R.string.validate_empty_field)
     private lateinit var phoneEt: EditText
@@ -170,21 +181,24 @@ class EditProfileFragment : BaseValidateTeacherFragment() {
         }
 
     private fun pickGalleryImages() {
-        if (ContextCompat.checkSelfPermission(
-                requireContext(),
-                Manifest.permission.READ_EXTERNAL_STORAGE
-            ) != PackageManager.PERMISSION_GRANTED
-        ) {
-
-            requestMultiplePermissions.launch(
-                arrayOf(
-                    Manifest.permission.READ_EXTERNAL_STORAGE
-                )
-            )
-        } else
+        if (hasPhotoPermission())
             launchFilePicker()
+        else
+            requestPhotoPermission()
+    }
 
+    fun hasPhotoPermission() =
+        EasyPermissions.hasPermissions(
+            requireContext(),Manifest.permission.READ_EXTERNAL_STORAGE
+        )
 
+    fun requestPhotoPermission(){
+        EasyPermissions.requestPermissions(
+            this,
+            "this process cat not work without this permission .",
+            PHOTO_PERMISSION,
+            Manifest.permission.READ_EXTERNAL_STORAGE
+        )
     }
 
     private fun launchFilePicker() {
@@ -256,5 +270,26 @@ class EditProfileFragment : BaseValidateTeacherFragment() {
             }
 
         }
+    }
+
+    override fun onPermissionsDenied(requestCode: Int, perms: List<String>) {
+        if (EasyPermissions.somePermissionPermanentlyDenied(this, perms)){
+            SettingsDialog.Builder(requireActivity()).build().show()
+        }else{
+            requestPhotoPermission()
+        }
+    }
+
+    override fun onPermissionsGranted(requestCode: Int, perms: List<String>) {
+        launchFilePicker()
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        EasyPermissions.onRequestPermissionsResult(requestCode,permissions,grantResults,this)
     }
 }

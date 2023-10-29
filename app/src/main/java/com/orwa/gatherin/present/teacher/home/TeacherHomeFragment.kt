@@ -249,22 +249,13 @@ class TeacherHomeFragment : BaseTeacherFragment() {
     }
 
     fun setScrollListener() {
-        binding.nestedScroll.setOnScrollChangeListener(object :
-            NestedScrollView.OnScrollChangeListener {
-            override fun onScrollChange(
-                v: NestedScrollView?,
-                scrollX: Int,
-                scrollY: Int,
-                oldScrollX: Int,
-                oldScrollY: Int
-            ) {
-                if (scrollY - oldScrollY < 0) {
-                    //scroll up
-                    binding.addSectionFab.show()
-                } else {
-                    //scroll down
-                    binding.addSectionFab.hide()
-                }
+        binding.nestedScroll.setOnScrollChangeListener(NestedScrollView.OnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
+            if (scrollY - oldScrollY < 0) {
+                //scroll up
+                binding.addSectionFab.show()
+            } else {
+                //scroll down
+                binding.addSectionFab.hide()
             }
         })
     }

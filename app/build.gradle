@@ -10,15 +10,15 @@ plugins {
 }
 
 android {
-    compileSdkVersion 33
+    compileSdkVersion 34
     buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.orwa.gatherin"
         minSdkVersion 21
-        targetSdkVersion 33
-        versionCode 16
-        versionName "1.6"
+        targetSdkVersion 34
+        versionCode 18
+        versionName "1.8"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -168,7 +168,7 @@ dependencies {
 
 
 // navigation
-    def nav_version = "2.4.1"
+    def nav_version = "2.5.0"
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
@@ -235,8 +235,8 @@ dependencies {
     //PhotoView
     implementation 'com.github.chrisbanes:PhotoView:2.3.0'
 
-    implementation 'com.android.billingclient:billing:4.1.0'
-    implementation("com.android.billingclient:billing-ktx:4.1.0")
+    implementation 'com.android.billingclient:billing:5.2.1'
+    implementation("com.android.billingclient:billing-ktx:5.2.1")
 
     implementation 'com.vmadalin:easypermissions-ktx:1.0.0'
 

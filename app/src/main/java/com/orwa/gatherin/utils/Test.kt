@@ -33,6 +33,7 @@ class ActionStateLiveData<T>(
                 Action.Retry -> {
                     emit(UIState.Retrying)
                 }
+                else -> {}
             }
 
             try {

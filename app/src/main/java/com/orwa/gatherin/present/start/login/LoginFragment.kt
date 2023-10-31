@@ -1,6 +1,5 @@
 package com.orwa.gatherin.present.start.login
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
@@ -54,7 +53,6 @@ class LoginFragment : BaseValidateDataFragment() {
     }
 
 
-    @SuppressLint("SuspiciousIndentation")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
